@@ -3,8 +3,10 @@ var cors = require('cors')
 var bodyParser = require('body-parser')
 var app = express()
 const mongoose = require('mongoose')
-var port = process.env.PORT || 5000
+const port = process.env.PORT || 5000
 const path = require('path')
+
+require("dotenv").config()
 
 app.use(bodyParser.json())
 app.use(cors())
@@ -14,7 +16,7 @@ app.use(
   })
 )
 
-const mongoURI = 'mongodb+srv://arjunv0101:Bharat@201401@alphadb.lvc3j.mongodb.net/<dbname>?retryWrites=true&w=majority'
+const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://arjunv0101:Bharat@201401@alphadb.lvc3j.mongodb.net/<dbname>?retryWrites=true&w=majority'
 
 mongoose
   .connect(

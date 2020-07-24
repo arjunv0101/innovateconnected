@@ -26,10 +26,15 @@ class Login extends Component {
     }
 
     login(user).then(res => {
-      if (res) {
+      if(res == true){
         this.props.history.push(`/profile`)
       }
+      else{
+        this.props.history.push('/login')
+      }
     })
+
+    return <p> hello</p>
   }
 
   render() {

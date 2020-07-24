@@ -20,8 +20,15 @@ export const login = user => {
       password: user.password
     })
     .then(response => {
-      localStorage.setItem('usertoken', response.data)
-      return response.data
+      if(response.data.correct == true){
+        console.log(response)
+        localStorage.setItem('usertoken', response.data.token)
+        return response.data.correct
+      }
+      else{
+        return response.data.correct
+      }
+        
     })
     .catch(err => {
       console.log(err)
