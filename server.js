@@ -16,7 +16,7 @@ app.use(
   })
 )
 
-const mongoURI = 'mongodb+srv://arjunv0101:Bharat@201401@alphadb.lvc3j.mongodb.net/alphadb?retryWrites=true&w=majority'
+const mongoURI = process.env.MONGODB_URI //|| 'mongodb+srv://arjunv0101:Bharat@201401@alphadb.lvc3j.mongodb.net/alphadb?retryWrites=true&w=majority'
 
 mongoose
   .connect(
