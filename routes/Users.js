@@ -57,7 +57,7 @@ users.post('/login', (req, res) => {
             university: user.university,
             email: user.email
           }
-          let token = jwt.sign(payload, process.env.SECRET_KEY, {
+          let token = jwt.sign(payload, secret, {
             expiresIn: 1440
           })
           res.send({
